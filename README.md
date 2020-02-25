@@ -1,4 +1,5 @@
 # Conformal-Maps
+Run final_main_output.ipynb
 system req: 
             
             Jupyter notebook
