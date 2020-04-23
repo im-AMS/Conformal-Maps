@@ -9,7 +9,7 @@ def w_symbolic_split(z):
     Imag = im(z)
     return Real , Imag
 
-def w_numeric(z , frame):
+def w_numeric(z , frame=1):
     Real , Imag = frames(z,frame)
     Real = lambdify((a, b), Real, 'numpy')
     Imag = lambdify((a, b), Imag, 'numpy')
