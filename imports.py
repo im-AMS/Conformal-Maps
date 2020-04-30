@@ -16,5 +16,5 @@ pi = np.pi
 i = I
 a ,  b = symbols('a b',real = true)
 #complex number of the form z = a + i b
-z= a + I* b
+z = a + I * b
 
