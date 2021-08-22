@@ -1,3 +1,4 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD)
 # Conformal-Maps
 
 The package ```conformalMappings``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets.
