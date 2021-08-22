@@ -75,22 +75,22 @@ And **RUN!!!**
 
 Here are a few preview images, that show how squares get transformed by conformal mappings.
 
-w=e^z (origin is the square [-1.5, 1.5] x [1.5, 1.5])
+w=e^z (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![e^z](Figures/e^z.gif)
 
-w=z^2 (origin is the square [-1.5, 1.5] x [1.5, 1.5])
+w=z^2 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![z^2](Figures/z^2.png)
 
-w=z^3 (origin is the square [-1.5, 1.5] x [1.5, 1.5])
+w=z^3 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![z^3](Figures/z^3.png)
 
-w=tan z (origin is the square [-1.5, 1.5] x [1.5, 1.5])
+w=tan z (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![tanz](Figures/tanz.png)
 
-w=2xy + i(y sin x - x sin y) (origin is the sqaure [-5, 5] x [5, 5])
+w=2xy + i(y sin x - x sin y) (origin is the sqaure [-5, 5] x [-5, 5])
 ![MyFav](Figures/MyFav.png)
 
-w=e^z (origin is the sqaure [-3.14, 3.14] x [3.14, 3.14])
+w=e^z (origin is the sqaure [-3.14, 3.14] x [-3.14, 3.14])
 ![lnz](Figures/expz_2.png)
 
 ## Applications
