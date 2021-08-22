@@ -5,6 +5,8 @@ The package ```conformalMappings``` is about conformal mappings and their applic
 
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The package adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies and anyone who wants to visualize how complex variable mappings change plane geometries.
 
+This code offers the possibility to visualize the geometrical change of certain geometries in the complex plane, when functions of a complex variable are applied to them. When angles between lines in the original plane (z-plane) are preserved after the mapping to the new plane (w-plane), one speaks of *conformal mappings* (see [BC09](https://www.mheducation.com/highered/product/complex-variables-applications-brown-churchill/M9780073383170.html)). 
+
 ## Run the code
 
 ### Method 1
@@ -73,7 +75,9 @@ And **RUN!!!**
 
 ## Examples
 
-Here are a few preview images, that show how squares get transformed by conformal mappings.
+Here are a few preview images, that show how squares get transformed by complex variable mappings. 
+
+**Caution:** One of those may not be conformal, or angle preserving! 
 
 w=e^z (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![e^z](Figures/e^z.gif)
@@ -87,10 +91,10 @@ w=z^3 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 w=tan z (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![tanz](Figures/tanz.png)
 
-w=2xy + i(y sin x - x sin y) (origin is the sqaure [-5, 5] x [-5, 5])
+w=2xy + i(y sin x - x sin y) (origin is the square [-5, 5] x [-5, 5])
 ![MyFav](Figures/MyFav.png)
 
-w=e^z (origin is the sqaure [-3.14, 3.14] x [-3.14, 3.14])
+w=e^z (origin is the square [-3.14, 3.14] x [-3.14, 3.14])
 ![lnz](Figures/expz_2.png)
 
 ## Applications
@@ -100,6 +104,8 @@ In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [L
 ![lnz](Figures/mapping_arctan_colored_boundary.gif)
 
 ## References
+
+[BC09] [Brown J.W., Churchill R.V., Complex variables and applications, Eighth edition, McGraw-Hill Book Company; 2009](https://www.mheducation.com/highered/product/complex-variables-applications-brown-churchill/M9780073383170.html)
 
 [LG21] Lauer-Baré Z. and Gaertig E., [*Conformal Mappings with SymPy: Towards Python-driven Analytical Modeling in Physics*. Lauer-Baré, Z. & Gaertig, E. In Agarwal, M., Calloway, C., Niederhut, D., & Shupe, D., editors, Proceedings of the 20th Python in Science Conference, pages 85 - 93, 2021](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html)
 
