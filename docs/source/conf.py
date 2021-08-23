@@ -13,6 +13,12 @@
 import os
 import sys
 
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+if on_rtd:
+    html_theme = 'default'
+else:
+    html_theme = 'nature'
+
 sys.path.insert(0, os.path.abspath('{0}'.format('..\\..')))
 
 
