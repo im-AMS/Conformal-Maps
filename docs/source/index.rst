@@ -9,9 +9,7 @@ Welcome to Conformal-Maps documentation!
 This package conformalMappings is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets.
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The packet adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies.
 
-Application examples can be found on `Conformal Mappings with SymPy <https://github.com/zolabar/ConformalMappingSympy>`_ .
-
-Back to `Conformal-Mapps github repository <https://github.com/zolabar/Conformal-Maps>`_ .
+Application examples can be found on `Conformal Mappings with SymPy <https://github.com/zolabar/ConformalMappingSympy>`_ . Back to `Conformal-Mapps github repository <https://github.com/zolabar/Conformal-Maps>`_ .
 
 .. toctree::
 
