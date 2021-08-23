@@ -1,11 +1,13 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD)
 # Conformal-Maps
 
-The package ```conformalMappings``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets.
+The Python package [```conformalMappings```](https://conformal-maps.readthedocs.io/en/latest/index.html) is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
 
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The package adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies and anyone who wants to visualize how complex variable mappings change plane geometries.
 
 This code offers the possibility to visualize the geometrical change of certain geometries in the complex plane, when functions of a complex variable are applied to them. When angles between lines in the original plane (z-plane) are preserved after the mapping to the new plane (w-plane), one speaks of *conformal mappings* (see [BC09](https://www.mheducation.com/highered/product/complex-variables-applications-brown-churchill/M9780073383170.html)). 
+
+There is a [readthedocs documentation of this package](https://conformal-maps.readthedocs.io/en/latest/index.html).
 
 ## Run the code
 
