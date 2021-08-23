@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
 # Conformal-Maps
 
 The Python package ```conformalMappings``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
