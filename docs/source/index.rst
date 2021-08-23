@@ -11,6 +11,8 @@ The aim is to create a full package of scientific Python with release, documenta
 
 Application examples can be found on `Conformal Mappings with SymPy <https://github.com/zolabar/ConformalMappingSympy>`_ .
 
+Back to `Conformal-Mapps github repository <https://github.com/zolabar/Conformal-Maps>`_ .
+
 .. toctree::
 
    conformalMappings
