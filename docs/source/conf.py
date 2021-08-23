@@ -13,7 +13,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('{0}'.format('C:\\Users\\zoufi\\Documents\\GitHub\\ConformalMappings')))
+sys.path.insert(0, os.path.abspath('{0}'.format('...\\...\\...\\ConformalMappings')))
 
 
 
