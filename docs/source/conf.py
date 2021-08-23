@@ -19,7 +19,7 @@ if on_rtd:
 else:
     html_theme = 'nature'
 
-sys.path.insert(0, os.path.abspath('{0}'.format('..\\..')))
+sys.path.insert(0, os.path.abspath('{0}'.format('.')))
 
 
 
