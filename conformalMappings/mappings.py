@@ -9,7 +9,7 @@ are common in applications.
 class RectangleToEccentricAnnulus:
     """
     This class permits to easily create and map a rectangle to a specific 
-    eccentric annulus.
+    eccentric annulus. 
     """
 
     def __init__(self, R1, R2, epsilon):
@@ -101,4 +101,64 @@ class RectangleToEccentricAnnulus:
 
         """
         value = self.pole*sym.tan((z)/2)-sym.I*self.shift
+        return value
+
+
+class RectangleToEllipticAnnulus:
+    """
+    This class permits to easily create and map a rectangle to a specific 
+    concentric elliptical annulus.
+    
+    """
+    def __init__(self, b, a):
+        """
+        
+
+        Parameters
+        ----------
+        b : Large half axis of inner ellipse
+        
+        a : Large half axis of outer ellipse
+
+        Returns
+        -------
+        None.
+
+        """
+    
+
+        self.top = np.pi
+        self.bottom = -np.pi
+        self.a = a
+        self.b = b
+        self.c = np.sqrt(self.a**2-self.b**2) 
+        self.k = round(a/np.sqrt(2),2)
+    
+        if self.b > self.a/np.sqrt(2):
+            left = np.log(self.b/self.c+np.sqrt((self.b/self.c)**2-1)) 
+            right = np.log(self.a/self.c+np.sqrt((self.a/self.c)**2-1)) 
+        else:
+            print()
+            print('ERROR: smaller half axis must be larger than {0}:'.format(self.k)) 
+            print('The ratio of larger half axis and sqrt(2)')
+            print()
+        self.left = left
+        self.right = right    
+      
+    def mapping(self, z):
+        """
+        
+
+        Parameters
+        ----------
+        z : Symbolic complex variable
+
+        Returns
+        -------
+        value : Returns a complex variable function that maps the rectangle
+        [left, right] x [-pi, pi] to an elliptic annulus where half axes are
+        b and a.
+
+        """
+        value = self.c*sym.cosh(z)
         return value
