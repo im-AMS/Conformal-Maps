@@ -6,10 +6,6 @@ import numpy as np
 import sympy as sym
 from sympy import *
 import plotly.graph_objects as go
-from plotly.offline import init_notebook_mode, iplot
-init_notebook_mode(connected=True)
-#for faster computation
-#from mappings import RectangleToEccentricAnnulus
 from numba import jit
 jit(nopython=True , parallel=True)
 
