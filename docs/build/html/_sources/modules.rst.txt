@@ -1,5 +1,5 @@
-ConformalMappings
-=================
+Conformal-Maps
+==============
 
 .. toctree::
    :maxdepth: 4
