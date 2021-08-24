@@ -100,6 +100,8 @@ w=2xy + i(y sin x - x sin y) (origin is the square [-5, 5] x [-5, 5])
 w=e^z (origin is the square [-3.14, 3.14] x [-3.14, 3.14])
 ![lnz](Figures/expz_2.png)
 
+w=z+1/z (circle mode, center at (-0.08, 0.08), radius = 1.08)
+![Joukowsky transform](Figures/Joukowsky-transform.png)
 ## Applications
 
 In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).

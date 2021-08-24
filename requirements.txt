@@ -3,3 +3,4 @@ matplotlib
 plotly
 numpy
 numba
+jupyter
