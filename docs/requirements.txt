@@ -1,0 +1,5 @@
+sympy
+matplotlib
+plotly
+numpy
+numba
