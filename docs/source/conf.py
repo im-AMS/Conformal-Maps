@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath('{0}'.format('.')))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Conformal Mappings'
+project = 'Conformal-Maps'
 copyright = '2021, Aditha and Zolabar'
 author = 'Aditha and Zolabar'
 
