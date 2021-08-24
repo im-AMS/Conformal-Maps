@@ -1,7 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
-# Conformal-Maps
+# conformalMaps
 
-The Python package ```conformalMappings``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
+The Python package ```conformalMaps``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
 
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The package adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies and anyone who wants to visualize how complex variable mappings change plane geometries.
 
