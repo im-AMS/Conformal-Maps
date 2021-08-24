@@ -13,7 +13,7 @@ Application examples can be found on `Conformal Mappings with SymPy <https://git
 
 .. toctree::
 
-   conformalMappings
+   conformalMaps
    modules
 
 
