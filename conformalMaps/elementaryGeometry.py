@@ -227,11 +227,11 @@ def square(z_numeric,
 
 
 def circle(z_numeric,
-                 radius,
-                 fine,
-                 frame,
-                 x0,
-                 y0):
+           radius,
+           fine,
+           frame,
+           x0,
+           y0):
     """
 
     Parameters
@@ -259,27 +259,24 @@ def circle(z_numeric,
 
     color = "white"
     line_grapher(fn_vertical.real, fn_vertical.imag, color)
-    
-    
-    
-    for i in np.linspace(0.01*radius, 0.98*radius, 20):
-           X = x0 + i * np.cos(t)
-           Y = y0 + i * np.sin(t)
-        
-           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
-        
-           color = "green"
-           line_grapher(fn_vertical.real, fn_vertical.imag, color)
-       
-    for i in np.linspace(0, 2*np.pi, 20):
-           X = x0 + t2 * np.cos(i)
-           Y = y0 + t2 * np.sin(i)
-        
-           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
-        
-           color = "red"
-           line_grapher(fn_vertical.real, fn_vertical.imag, color)       
-   
+
+    for i in np.linspace(0.01 * radius, 0.98 * radius, 20):
+        X = x0 + i * np.cos(t)
+        Y = y0 + i * np.sin(t)
+
+        fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+
+        color = "green"
+        line_grapher(fn_vertical.real, fn_vertical.imag, color)
+
+    for i in np.linspace(0, 2 * np.pi, 20):
+        X = x0 + t2 * np.cos(i)
+        Y = y0 + t2 * np.sin(i)
+
+        fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+
+        color = "red"
+        line_grapher(fn_vertical.real, fn_vertical.imag, color)
 
     fig.update_layout(
         template='plotly_dark',
@@ -289,20 +286,21 @@ def circle(z_numeric,
         height=500,
         showlegend=False,
         dragmode='pan'
-#                       hoverinfo='false'
+        #                       hoverinfo='false'
     )
 
     fig.show(config={'scrollZoom': True})
 
     return
 
+
 def concentricAnnulus(z_numeric,
-                 innerRadius,
-                 outerRadius,
-                 fine,
-                 frame,
-                 x0,
-                 y0):
+                      innerRadius,
+                      outerRadius,
+                      fine,
+                      frame,
+                      x0,
+                      y0):
     """
     This function describes a concentric annulus.
     
@@ -332,36 +330,32 @@ def concentricAnnulus(z_numeric,
 
     color1 = "magenta"
     line_grapher(fn_vertical.real, fn_vertical.imag, color1)
-    
-    
+
     X2 = x0 + innerRadius * np.cos(t)
     Y2 = y0 + innerRadius * np.sin(t)
 
     fn_vertical = anim(ip_fn=z_numeric, x=X2, y=Y2, i=frame)
 
     color2 = "blue"
-    line_grapher(fn_vertical.real, fn_vertical.imag, color2)    
-    
-    
-    
-    for i in np.linspace(1.01*innerRadius, 0.98*outerRadius, 20):
-           X = x0 + i * np.cos(t)
-           Y = y0 + i * np.sin(t)
-        
-           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
-        
-           color = "green"
-           line_grapher(fn_vertical.real, fn_vertical.imag, color)
-       
-    for i in np.linspace(0, 2*np.pi, 20):
-           X = x0 + t2 * np.cos(i)
-           Y = y0 + t2 * np.sin(i)
-        
-           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
-        
-           color = "grey"
-           line_grapher(fn_vertical.real, fn_vertical.imag, color)       
-   
+    line_grapher(fn_vertical.real, fn_vertical.imag, color2)
+
+    for i in np.linspace(1.01 * innerRadius, 0.98 * outerRadius, 20):
+        X = x0 + i * np.cos(t)
+        Y = y0 + i * np.sin(t)
+
+        fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+
+        color = "green"
+        line_grapher(fn_vertical.real, fn_vertical.imag, color)
+
+    for i in np.linspace(0, 2 * np.pi, 20):
+        X = x0 + t2 * np.cos(i)
+        Y = y0 + t2 * np.sin(i)
+
+        fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+
+        color = "grey"
+        line_grapher(fn_vertical.real, fn_vertical.imag, color)
 
     fig.update_layout(
         template='plotly_dark',
@@ -371,7 +365,7 @@ def concentricAnnulus(z_numeric,
         height=500,
         showlegend=False,
         dragmode='pan'
-#                       hoverinfo='false'
+        #                       hoverinfo='false'
     )
 
     fig.show(config={'scrollZoom': True})
@@ -380,11 +374,11 @@ def concentricAnnulus(z_numeric,
 
 
 def single_circle(z_numeric,
-                 radius,
-                 fine,
-                 frame,
-                 x0,
-                 y0):
+                  radius,
+                  fine,
+                  frame,
+                  x0,
+                  y0):
     """
     This function describes the outer boundary of a circle
 
@@ -422,13 +416,12 @@ def single_circle(z_numeric,
         height=500,
         showlegend=False,
         dragmode='pan'
-#                       hoverinfo='false'
+        #                       hoverinfo='false'
     )
 
     fig.show(config={'scrollZoom': True})
 
     return
-
 
 
 # function for ipywidget to update on change of any parameters
@@ -439,9 +432,12 @@ def update_rectangle(function,
                      bottom,
                      top,
                      ticks,
-                     vertFreq=1):
+                     vertFreq=1,
+                     anim_scaler=100):
     """
     Function that updates the rectangle plot.
+
+    anim_scaler is value of final frame of anim, added coz widget.Play doesnot increment in fraction for some reason
     """
 
     #   fine ness of points, since its all numerical method
@@ -459,15 +455,17 @@ def update_rectangle(function,
               top=top,
               ticks=ticks,
               fine=fine,
-              frame=transformation,
+              frame=transformation * 1 / anim_scaler,
               vertFreq=vertFreq)
     return
 
 
 # function for ipywidget to update on change of any parameters
-def update_square(function, transformation, limit_range, ticks):
+def update_square(function, transformation, limit_range, ticks, anim_scaler=100):
     """
     Function that updates the square plot.
+
+   anim_scaler is value of final frame of anim, added coz widget.Play doesnot increment in fraction for some reason
     """
 
     #   fine ness of points, since its all numerical method
@@ -482,7 +480,7 @@ def update_square(function, transformation, limit_range, ticks):
            limit_range=limit_range,
            ticks=ticks,
            fine=fine,
-           frame=transformation)
+           frame=transformation * 1 / anim_scaler)
     return
 
 
@@ -491,20 +489,23 @@ def update_single_circle(
         transformation,
         radius,
         x0,
-        y0):
+        y0,
+        anim_scaler=100):
     """
     function that updates single_circle plot
+
+    anim_scaler is value of final frame of anim, added coz widget.Play doesnot increment in fraction for some reason
     """
 
     fine = 50
 
     fun = w_numeric(eval(function))
     single_circle(z_numeric=fun,
-                 radius=radius,
-                 fine=fine,
-                 frame=transformation,
-                 x0=x0,
-                 y0=y0)
+                  radius=radius,
+                  fine=fine,
+                  frame=transformation * 1 / anim_scaler,
+                  x0=x0,
+                  y0=y0)
 
     return
 
@@ -514,20 +515,23 @@ def update_circle(
         transformation,
         radius,
         x0,
-        y0):
+        y0,
+        anim_scaler=100):
     """
     function that updates circle plot
+
+    anim_scaler is value of final frame of anim, added coz widget.Play doesnot increment in fraction for some reason
     """
 
     fine = 50
 
     fun = w_numeric(eval(function))
     circle(z_numeric=fun,
-                 radius=radius,
-                 fine=fine,
-                 frame=transformation,
-                 x0=x0,
-                 y0=y0)
+           radius=radius,
+           fine=fine,
+           frame=transformation * 1 / anim_scaler,
+           x0=x0,
+           y0=y0)
 
     return
 
@@ -538,20 +542,23 @@ def update_concentricAnnulus(
         innerRadius,
         outerRadius,
         x0,
-        y0):
+        y0,
+        anim_scaler=100):
     """
     function that updates concentric annulus plot
+
+    anim_scaler is value of final frame of anim, added coz widget.Play doesnot increment in fraction for some reason
     """
 
     fine = 50
 
     fun = w_numeric(eval(function))
     concentricAnnulus(z_numeric=fun,
-                 innerRadius=innerRadius,
-                 outerRadius=outerRadius,
-                 fine=fine,
-                 frame=transformation,
-                 x0=x0,
-                 y0=y0)
+                      innerRadius=innerRadius,
+                      outerRadius=outerRadius,
+                      fine=fine,
+                      frame=transformation * 1 / anim_scaler,
+                      x0=x0,
+                      y0=y0)
 
     return
