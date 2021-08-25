@@ -100,7 +100,7 @@ w=2xy + i(y sin x - x sin y) (origin is the square [-5, 5] x [-5, 5])
 w=(z+1)/(i-z) (origin is an annulus with radii 3 and 7)
 ![lnz](Figures/moebius.png)
 
-w=z+1/z (circle mode, center at (-0.08, 0.08), radius = 1.08)
+w=z+1/z (circle boundary, center at (-0.08, 0.08), radius = 1.08)
 ![Joukowsky transform](Figures/Joukowsky-transform.png)
 ## Applications
 
