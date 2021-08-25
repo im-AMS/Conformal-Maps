@@ -104,7 +104,7 @@ w=z+1/z (circle boundary, center at (-0.08, 0.08), radius = 1.08)
 ![Joukowsky transform](Figures/Joukowsky-transform.png)
 ## Applications
 
-In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).
+In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. Based on results from [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) there is also an analogous class ```ConcentricAnnulusToEccentricAnnulus``` in the ```mappings``` module. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).
 
 ![lnz](Figures/mapping_arctan_colored_boundary.gif)
 
