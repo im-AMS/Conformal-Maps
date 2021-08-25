@@ -30,6 +30,10 @@ git clone URL
 
 First install the dependencies.
 
+It is preferable to run this notebook with Jupiter lab, with the extensions shown below.
+
+**Note**  *if there is stutter(sudden blank and reapperance) of graph on update, it means the extensions for jupyterlab are not installed correctly.*
+
 system req:
 ```
             Jupyter lab
@@ -40,7 +44,7 @@ system req:
 
 ```
 To install all the dependecies open therminal and type the below.
-```
+```bash
             pip install -r requirements.txt
 
                         or
@@ -48,20 +52,23 @@ To install all the dependecies open therminal and type the below.
             conda install --file requirements.txt
 
             jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
-            jupyter labextension install @jupyterlab/plotly-extension
+            
+            jupyter nbextension enable --py widgetsnbextension
 ```
 Check if jupyter lab extensions are installed
 ```
             jupyter labextension list
 ```
-you should get the following
+you should something similar
 ```
-jupyterLab v1.2.14
-Known labextensions:
-   app dir: $anaconda or python path$/jupyter/lab
-        @jupyter-widgets/jupyterlab-manager v1.1.0  enabled  OK
-        @jupyterlab/plotly-extension v1.0.0  enabled  OK
+JupyterLab v3.1.8
+
+(bla bla)
+
+jupyterlab-plotly v5.2.2 enabled OK
+@jupyter-widgets/jupyterlab-manager v3.0.0 enabled OK (python, jupyterlab_widgets)
+
+(bla bla)
 ```
 
 Alternatively, install the requirements and use ```jupyter notebook```. You can also test the code in [binder](https://mybinder.org/).
