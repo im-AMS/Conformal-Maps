@@ -226,62 +226,168 @@ def square(z_numeric,
     return
 
 
-'''
-def circle(z_numeric, 
-              radius,
-              ticks, 
-              fine, 
-              frame):
-
-    fig.data = []
-    
-    color1 = 'green'
-    color2 = 'red'
-    # Horizontal Lines
-    for j in np.linspace(0, radius, ticks):  
-        for i in np.linspace(0, 2*np.pi, ticks):
-             ones = np.ones(fine)
-             t1 = j * ones
-             t2 = i * ones
-             x = t1*np.cos(t2)
-             y = t1*np.sin(t2)
-
-
-             fn_vertical = anim(ip_fn=z_numeric, x=x, y=y, i=frame)
-    
-             line_grapher(fn_vertical.real, fn_vertical.imag, color1)
-    
-      
-             fn_horizontal = anim(ip_fn=z_numeric, x=x, y=y, i=frame)
-    
-             line_grapher(fn_horizontal.real, fn_horizontal.imag, color2)
-        
-    
-    fig.update_layout(
-                      template='plotly_dark',
-                      yaxis=dict(scaleanchor="x", scaleratio=1),
-                      autosize=False, # lbz tested true
-                      width=1000,
-                      height=500,
-                      showlegend=False,
-                      dragmode='pan'
-#                       hoverinfo='false'
-                      )
-
-    fig.show(config={'scrollZoom': True})
-    
-    return  
-
-'''
-
-
-def singe_circle(z_numeric,
+def circle(z_numeric,
                  radius,
                  fine,
                  frame,
                  x0,
                  y0):
     """
+
+    Parameters
+    ----------
+    z_numeric: Numerical conplex function
+    radius: radius of circle
+    fine: number of points used to plot circle
+    frame: anim frame
+    x0: x coordinate for center of circle
+    y0: y coordinate for center of circle
+
+
+    :return: None
+    """
+
+    fig.data = []
+
+    t = np.linspace(0, 2 * np.pi, fine)
+    t2 = np.linspace(0, radius, fine)
+
+    X = x0 + radius * np.cos(t)
+    Y = y0 + radius * np.sin(t)
+
+    fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+
+    color = "white"
+    line_grapher(fn_vertical.real, fn_vertical.imag, color)
+    
+    
+    
+    for i in np.linspace(0.01*radius, 0.98*radius, 20):
+           X = x0 + i * np.cos(t)
+           Y = y0 + i * np.sin(t)
+        
+           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+        
+           color = "green"
+           line_grapher(fn_vertical.real, fn_vertical.imag, color)
+       
+    for i in np.linspace(0, 2*np.pi, 20):
+           X = x0 + t2 * np.cos(i)
+           Y = y0 + t2 * np.sin(i)
+        
+           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+        
+           color = "red"
+           line_grapher(fn_vertical.real, fn_vertical.imag, color)       
+   
+
+    fig.update_layout(
+        template='plotly_dark',
+        yaxis=dict(scaleanchor="x", scaleratio=1),
+        autosize=False,  # lbz tested true
+        width=1000,
+        height=500,
+        showlegend=False,
+        dragmode='pan'
+#                       hoverinfo='false'
+    )
+
+    fig.show(config={'scrollZoom': True})
+
+    return
+
+def concentricAnnulus(z_numeric,
+                 innerRadius,
+                 outerRadius,
+                 fine,
+                 frame,
+                 x0,
+                 y0):
+    """
+    This function describes a concentric annulus.
+    
+    Parameters
+    ----------
+    z_numeric: Numerical complex function
+    innerRadius: radius of inner circle
+    outerRadius: radius of outer circle
+    fine: number of points used to plot circle
+    frame: anim frame
+    x0: x coordinate for center of circle
+    y0: y coordinate for center of circle
+
+
+    :return: None
+    """
+
+    fig.data = []
+
+    t = np.linspace(0, 2 * np.pi, fine)
+    t2 = np.linspace(innerRadius, outerRadius, fine)
+
+    X1 = x0 + outerRadius * np.cos(t)
+    Y1 = y0 + outerRadius * np.sin(t)
+
+    fn_vertical = anim(ip_fn=z_numeric, x=X1, y=Y1, i=frame)
+
+    color1 = "magenta"
+    line_grapher(fn_vertical.real, fn_vertical.imag, color1)
+    
+    
+    X2 = x0 + innerRadius * np.cos(t)
+    Y2 = y0 + innerRadius * np.sin(t)
+
+    fn_vertical = anim(ip_fn=z_numeric, x=X2, y=Y2, i=frame)
+
+    color2 = "blue"
+    line_grapher(fn_vertical.real, fn_vertical.imag, color2)    
+    
+    
+    
+    for i in np.linspace(1.01*innerRadius, 0.98*outerRadius, 20):
+           X = x0 + i * np.cos(t)
+           Y = y0 + i * np.sin(t)
+        
+           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+        
+           color = "green"
+           line_grapher(fn_vertical.real, fn_vertical.imag, color)
+       
+    for i in np.linspace(0, 2*np.pi, 20):
+           X = x0 + t2 * np.cos(i)
+           Y = y0 + t2 * np.sin(i)
+        
+           fn_vertical = anim(ip_fn=z_numeric, x=X, y=Y, i=frame)
+        
+           color = "grey"
+           line_grapher(fn_vertical.real, fn_vertical.imag, color)       
+   
+
+    fig.update_layout(
+        template='plotly_dark',
+        yaxis=dict(scaleanchor="x", scaleratio=1),
+        autosize=False,  # lbz tested true
+        width=1000,
+        height=500,
+        showlegend=False,
+        dragmode='pan'
+#                       hoverinfo='false'
+    )
+
+    fig.show(config={'scrollZoom': True})
+
+    return
+
+
+def single_circle(z_numeric,
+                 radius,
+                 fine,
+                 frame,
+                 x0,
+                 y0):
+    """
+    This function describes the outer boundary of a circle
+
 
     Parameters
     ----------
@@ -324,7 +430,6 @@ def singe_circle(z_numeric,
     return
 
 
-# next objetcs: circle, ellipse, annulusConcentric, annulusEccentric, annulusElliptical
 
 # function for ipywidget to update on change of any parameters
 def update_rectangle(function,
@@ -394,7 +499,7 @@ def update_single_circle(
     fine = 50
 
     fun = w_numeric(eval(function))
-    singe_circle(z_numeric=fun,
+    single_circle(z_numeric=fun,
                  radius=radius,
                  fine=fine,
                  frame=transformation,
@@ -404,22 +509,49 @@ def update_single_circle(
     return
 
 
-"""
-# function for ipywidget to update on change of any parameters
-def update_circle(function,transformation, radius, ticks):
-    
-#   fine ness of points, since its all numerical method
-#   we need to choose the number of points
+def update_circle(
+        function,
+        transformation,
+        radius,
+        x0,
+        y0):
+    """
+    function that updates circle plot
+    """
+
     fine = 50
 
-#   The main input function from user
     fun = w_numeric(eval(function))
+    circle(z_numeric=fun,
+                 radius=radius,
+                 fine=fine,
+                 frame=transformation,
+                 x0=x0,
+                 y0=y0)
 
-#   The main Grapher
-    circle(z_numeric = fun, 
-                 radius = radius,
-                 ticks = ticks,
-                 fine = fine,
-                 frame = transformation)
     return
-"""
+
+
+def update_concentricAnnulus(
+        function,
+        transformation,
+        innerRadius,
+        outerRadius,
+        x0,
+        y0):
+    """
+    function that updates concentric annulus plot
+    """
+
+    fine = 50
+
+    fun = w_numeric(eval(function))
+    concentricAnnulus(z_numeric=fun,
+                 innerRadius=innerRadius,
+                 outerRadius=outerRadius,
+                 fine=fine,
+                 frame=transformation,
+                 x0=x0,
+                 y0=y0)
+
+    return
