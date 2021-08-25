@@ -30,6 +30,10 @@ git clone URL
 
 First install the dependencies.
 
+It is preferable to run this notebook with Jupiter lab, with the extensions shown below.
+
+**Note**  *if there is stutter(sudden blank and reapperance) of graph on update, it means the extensions for jupyterlab are not installed correctly.*
+
 system req:
 ```
             Jupyter lab
@@ -40,7 +44,7 @@ system req:
 
 ```
 To install all the dependecies open therminal and type the below.
-```
+```bash
             pip install -r requirements.txt
 
                         or
@@ -48,20 +52,23 @@ To install all the dependecies open therminal and type the below.
             conda install --file requirements.txt
 
             jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
-            jupyter labextension install @jupyterlab/plotly-extension
+            
+            jupyter nbextension enable --py widgetsnbextension
 ```
 Check if jupyter lab extensions are installed
 ```
             jupyter labextension list
 ```
-you should get the following
+you should something similar
 ```
-jupyterLab v1.2.14
-Known labextensions:
-   app dir: $anaconda or python path$/jupyter/lab
-        @jupyter-widgets/jupyterlab-manager v1.1.0  enabled  OK
-        @jupyterlab/plotly-extension v1.0.0  enabled  OK
+JupyterLab v3.1.8
+
+(bla bla)
+
+jupyterlab-plotly v5.2.2 enabled OK
+@jupyter-widgets/jupyterlab-manager v3.0.0 enabled OK (python, jupyterlab_widgets)
+
+(bla bla)
 ```
 
 Alternatively, install the requirements and use ```jupyter notebook```. You can also test the code in [binder](https://mybinder.org/).
@@ -104,7 +111,7 @@ w=z+1/z (circle boundary, center at (-0.08, 0.08), radius = 1.08)
 ![Joukowsky transform](Figures/Joukowsky-transform.png)
 ## Applications
 
-In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. Based on results from [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) there is also an analogous class ```ConcentricAnnulusToEccentricAnnulus``` in the ```mappings``` module. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).
+In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).
 
 ![lnz](Figures/mapping_arctan_colored_boundary.gif)
 
