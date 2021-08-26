@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Aug 26 12:04:52 2021
-
-@author: zolabar
-"""
 
 import sympy as sym
 from sympy import *
