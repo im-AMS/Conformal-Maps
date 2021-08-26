@@ -79,7 +79,7 @@ Open terminal in the location where you have cloned/downloaded and Type
 jupyter lab
 ```
 
-Open the `final_main_output.ipynb`
+Open the `example.ipynb`
 
 And **RUN!!!**
 
