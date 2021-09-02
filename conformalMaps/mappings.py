@@ -65,8 +65,8 @@ class RectangleToEccentricAnnulus:
           
           if shift != 0:
              
-              R1, R2,delta, b, A, B, C, epsilon, kappa, alpha, beta, c, M, F =symbols('R1 R2 delta b A B C epsilon kappa alpha beta c M F', real=True)
-              k, m, n = symbols('k m n', integer=True)
+              R1, R2,delta, b, A, B, C, epsilon, kappa, alpha, beta, c, M, F = sym.symbols('R1 R2 delta b A B C epsilon kappa alpha beta c M F', real=True)
+              k, m, n = sym.symbols('k m n', integer=True)
 
 
               testF=(R2**2-R1**2+b**2)/(2*b)

@@ -1,21 +1,12 @@
-""""
-This module deals with the plotling of graph.
-"""
-
 import numpy as np
 import sympy as sym
 from sympy import *
-import plotly.graph_objects as go
+import plotly.graph_objs as go
 from numba import jit
 
 jit(nopython=True, parallel=True)
 
-e = sym.E
-pi = np.pi
-i = sym.I
-x, y = sym.symbols('x y', real=True)
-# complex number of the form z = a + i b
-z = x + i * y
+from conformalMaps.symbols import x, y, i, z, e
 
 
 def w_symbolic_split(z):
@@ -78,7 +69,16 @@ def anim(ip_fn, x, y, i):
 
 
 # create a figure object
-fig = go.Figure()
+fig = go.FigureWidget()
+
+fig = fig.update_layout(
+    template='plotly_dark',
+    yaxis=dict(scaleanchor="x", scaleratio=1),
+    autosize=False,
+    width=900,
+    height=500,
+    showlegend=False,
+    dragmode='pan')
 
 
 def line_grapher(x, y, color):
@@ -100,8 +100,15 @@ def line_grapher(x, y, color):
 
     """
 
+    # global fig
     fig.add_trace(go.Scatter(x=x, y=y, line_color=color, hoverinfo='none',
                              line=dict(shape='spline'), mode='lines'))
+
+
+def line_updater(x, y, index, color):
+    fig.data[index].x = x
+    fig.data[index].y = y
+    fig.data[index].update(line_color=color)
 
 
 # transformation of rectangular grid
@@ -134,12 +141,42 @@ def rectangle(z_numeric,
 
     """
 
+    # global fig
     fig.data = []
+
+    for _ in range(ticks + ticks * (vertFreq)):
+        line_grapher([], [], "white")
+
+
+    fn_horizontal = []
+    fn_vertical = []
+
+    # Vertical Lines
+    # similar logic applies to vertical lines as explained above.
+    for count, j in enumerate(np.linspace(left, right, vertFreq * ticks)):
+
+        ones = np.ones(fine)
+        t = j * ones
+
+        linesV = np.linspace(bottom, top, fine)
+
+        color1 = 'green'
+        if j == left:
+            color1 = 'orange'
+        if j == right:
+            color1 = 'magenta'
+
+        fn_vertical.append( anim(ip_fn=z_numeric, x=t, y=linesV, i=frame))
+
+
+
+
+
     """
-    plotting "ticks" number of Horizontal Lines from range "left" to "right" with "fine" number of 
-    points for each line 
-    """
-    for j in np.linspace(bottom, top, ticks):
+        plotting "ticks" number of Horizontal Lines from range "left" to "right" with "fine" number of 
+        points for each line 
+        """
+    for count, j in enumerate(np.linspace(bottom, top, ticks)):
         ones = np.ones(fine)
 
         # plotting "j"th Horizontal line
@@ -155,49 +192,23 @@ def rectangle(z_numeric,
             color2 = 'red'
 
         """
-        to plot j th Horizontal line for "fine" number of points per line,'
-        i.e, array of co-ordinates for j th line (x,y) ranges from
-        x = [ left, right ]
-        y = j 
-        where length of x and y is "fine"
-        """
-        fn_horizontal = anim(ip_fn=z_numeric, x=linesH, y=t, i=frame)
+            to plot j th Horizontal line for "fine" number of points per line,'
+            i.e, array of co-ordinates for j th line (x,y) ranges from
+            x = [ left, right ]
+            y = j 
+            where length of x and y is "fine"
+            """
+        fn_horizontal.append(anim(ip_fn=z_numeric, x=linesH, y=t, i=frame))
 
-        line_grapher(fn_horizontal.real, fn_horizontal.imag, color2)
 
-    # Vertical Lines
-    # similar logic applies to vertical lines as explained above.
-    for j in np.linspace(left, right, vertFreq * ticks):
+    with fig.batch_update():
 
-        ones = np.ones(fine)
-        t = j * ones
+        [line_updater(horizontal.real, horizontal.imag, count, color2) for count,horizontal in enumerate(fn_horizontal)]
+        [line_updater(vertical.real, vertical.imag, count, color1) for count,vertical in enumerate(fn_vertical)]
 
-        linesV = np.linspace(bottom, top, fine)
+    # tmp = fig.show(config={'scrollZoom': True})
 
-        color1 = 'green'
-        if j == left:
-            color1 = 'orange'
-        if j == right:
-            color1 = 'magenta'
-
-        fn_vertical = anim(ip_fn=z_numeric, x=t, y=linesV, i=frame)
-
-        line_grapher(fn_vertical.real, fn_vertical.imag, color1)
-
-    fig.update_layout(
-        template='plotly_dark',
-        yaxis=dict(scaleanchor="x", scaleratio=1),
-        autosize=False,  # lbz tested true
-        width=1000,
-        height=500,
-        showlegend=False,
-        dragmode='pan'
-        #                       hoverinfo='false'
-    )
-
-    fig.show(config={'scrollZoom': True})
-
-    return
+    # return tmp
 
 
 def square(z_numeric,
@@ -223,7 +234,6 @@ def square(z_numeric,
               ticks,
               fine,
               frame)
-    return
 
 
 def circle(z_numeric,
@@ -247,6 +257,7 @@ def circle(z_numeric,
     :return: None
     """
 
+    global fig
     fig.data = []
 
     t = np.linspace(0, 2 * np.pi, fine)
@@ -278,21 +289,6 @@ def circle(z_numeric,
         color = "red"
         line_grapher(fn_vertical.real, fn_vertical.imag, color)
 
-    fig.update_layout(
-        template='plotly_dark',
-        yaxis=dict(scaleanchor="x", scaleratio=1),
-        autosize=False,  # lbz tested true
-        width=1000,
-        height=500,
-        showlegend=False,
-        dragmode='pan'
-        #                       hoverinfo='false'
-    )
-
-    fig.show(config={'scrollZoom': True})
-
-    return
-
 
 def concentricAnnulus(z_numeric,
                       innerRadius,
@@ -318,6 +314,7 @@ def concentricAnnulus(z_numeric,
     :return: None
     """
 
+    global fig
     fig.data = []
 
     t = np.linspace(0, 2 * np.pi, fine)
@@ -357,21 +354,6 @@ def concentricAnnulus(z_numeric,
         color = "grey"
         line_grapher(fn_vertical.real, fn_vertical.imag, color)
 
-    fig.update_layout(
-        template='plotly_dark',
-        yaxis=dict(scaleanchor="x", scaleratio=1),
-        autosize=False,  # lbz tested true
-        width=1000,
-        height=500,
-        showlegend=False,
-        dragmode='pan'
-        #                       hoverinfo='false'
-    )
-
-    fig.show(config={'scrollZoom': True})
-
-    return
-
 
 def single_circle(z_numeric,
                   radius,
@@ -396,6 +378,7 @@ def single_circle(z_numeric,
     :return: None
     """
 
+    global fig
     fig.data = []
 
     t = np.linspace(0, 2 * np.pi, fine)
@@ -408,32 +391,17 @@ def single_circle(z_numeric,
     color = "white"
     line_grapher(fn_vertical.real, fn_vertical.imag, color)
 
-    fig.update_layout(
-        template='plotly_dark',
-        yaxis=dict(scaleanchor="x", scaleratio=1),
-        autosize=False,  # lbz tested true
-        width=1000,
-        height=500,
-        showlegend=False,
-        dragmode='pan'
-        #                       hoverinfo='false'
-    )
-
-    fig.show(config={'scrollZoom': True})
-
-    return
-
 
 # function for ipywidget to update on change of any parameters
 def update_rectangle(function,
-                     transformation,
                      left,
                      right,
                      bottom,
                      top,
                      ticks,
+                     transformation,
                      vertFreq=1,
-                     anim_scaler=100):
+                     anim_scaler=1):
     """
     Function that updates the rectangle plot.
 
@@ -457,11 +425,10 @@ def update_rectangle(function,
               fine=fine,
               frame=transformation * 1 / anim_scaler,
               vertFreq=vertFreq)
-    return
 
 
 # function for ipywidget to update on change of any parameters
-def update_square(function, transformation, limit_range, ticks, anim_scaler=100):
+def update_square(function, transformation, limit_range, ticks, anim_scaler=1):
     """
     Function that updates the square plot.
 
@@ -490,7 +457,7 @@ def update_single_circle(
         radius,
         x0,
         y0,
-        anim_scaler=100):
+        anim_scaler=1):
     """
     function that updates single_circle plot
 
@@ -507,8 +474,6 @@ def update_single_circle(
                   x0=x0,
                   y0=y0)
 
-    return
-
 
 def update_circle(
         function,
@@ -516,7 +481,7 @@ def update_circle(
         radius,
         x0,
         y0,
-        anim_scaler=100):
+        anim_scaler=1):
     """
     function that updates circle plot
 
@@ -533,8 +498,6 @@ def update_circle(
            x0=x0,
            y0=y0)
 
-    return
-
 
 def update_concentricAnnulus(
         function,
@@ -543,7 +506,7 @@ def update_concentricAnnulus(
         outerRadius,
         x0,
         y0,
-        anim_scaler=100):
+        anim_scaler=1):
     """
     function that updates concentric annulus plot
 
@@ -560,5 +523,3 @@ def update_concentricAnnulus(
                       frame=transformation * 1 / anim_scaler,
                       x0=x0,
                       y0=y0)
-
-    return
