@@ -1,14 +1,17 @@
 import numpy as np
 import plotly.graph_objs as go
 import sympy as sym
+from sympy import *
 
 x, y = sym.symbols('x y', real=True)
+I = i = sym.I
+e = sym.exp
 
 z = x + sym.I * y
 
 
 class Rectangle:
-    def __init__(self, left=-1, right=1, top=1, bottom=-1, fine=50, Hticks=5, Vticks=5, w=None):
+    def __init__(self, left=-1, right=1, top=1, bottom=-1, fine=50, Hticks=10, Vticks=10, w=None):
 
         self.left = left
         self.right = right
@@ -17,6 +20,7 @@ class Rectangle:
         self.fine = fine
         self.Hticks = Hticks
         self.Vticks = Vticks
+        self.z = x + sym.I * y
 
         self.x, self.y = sym.symbols('x y', real=True)
 
@@ -31,7 +35,8 @@ class Rectangle:
 
     def init_plotly(self, left, right, top, bottom, fine, Hticks, Vticks, w):
 
-        self.transformed = self.matrix_generator(w=w, left=left, right=right, top=top, bottom=bottom, fine = fine, Hticks=Hticks, Vticks=Vticks)
+        self.transformed = self.matrix_generator(w=w, left=left, right=right, top=top, bottom=bottom, fine=fine,
+                                                 Hticks=Hticks, Vticks=Vticks)
 
         self.traces = self.create_traces(self.transformed)
 
@@ -46,15 +51,13 @@ class Rectangle:
             showlegend=False,
             dragmode='pan')
 
-    def matrix_generator(self,left, right, top, bottom, fine, Hticks, Vticks, w):
+    def matrix_generator(self, left, right, top, bottom, fine, Hticks, Vticks, w):
 
-        self.X , self.Y = self.gen_coordinate_grid(left, right, top, bottom, fine, Hticks, Vticks)
+        self.X, self.Y = self.gen_coordinate_grid(left, right, top, bottom, fine, Hticks, Vticks)
 
         self.w = self.w_numeric(w)
 
         return self.plugin(w=self.w, X=self.X, Y=self.Y)
-
-
 
     def gen_coordinate_grid(self, left=None, right=None, top=None, bottom=None, fine=None, Hticks=None, Vticks=None):
 
@@ -125,21 +128,34 @@ class Rectangle:
         return matrix
 
     def create_traces(self, transformed_mat):
-        traces = [go.Scatter(x=arr.real,
-                             y=arr.imag,
-                             line_color='red',
-                             hoverinfo='none',
-                             line=dict(shape='spline'),
-                             mode='lines') for arr in transformed_mat]
+
+        traces = []
+        for count, arr in enumerate(transformed_mat):
+            if count == 0:
+                color = 'blue'
+            elif 0 < count < self.Hticks - 1:
+                color = 'grey'
+            elif count == self.Hticks - 1:
+                color = 'red'
+            elif count == self.Hticks:
+                color = 'orange'
+            elif self.Hticks  < count < self.Vticks + self.Hticks - 1:
+                color = 'green'
+            elif count == self.Hticks + self.Vticks - 1:
+                color = 'magenta'
+            traces.append(go.Scatter(x=arr.real,
+                                     y=arr.imag,
+                                     line_color=color,
+                                     hoverinfo='none',
+                                     line=dict(shape='spline'),
+                                     mode='lines'))
 
         return traces
 
     def over_write_traces(self, transformed_mat):
 
         with self.fig.batch_update():
-
             for count, tmp in enumerate(transformed_mat):
-
                 self.fig.data[count].x = tmp.real
                 self.fig.data[count].y = tmp.imag
 
@@ -150,9 +166,13 @@ class Rectangle:
             self.traces = self.create_traces(transformed_mat)
             self.fig.add_traces(self.traces)
 
+    def anim(self, w, left, right, top, bottom, fine, Hticks, Vticks, frame, scale=100):
 
-    def updateFunc(self, w=None, left=None, right=None, top=None, bottom=None, fine=None, Hticks=None, Vticks=None):
+        return self.matrix_generator(w=(w - z) * (frame / scale) + z, left=left, right=right, top=top, bottom=bottom,
+                                     fine=fine, Hticks=Hticks, Vticks=Vticks)
 
+    def updateFunc(self, w=None, left=None, right=None, top=None, bottom=None, fine=None, Hticks=None, Vticks=None,
+                   frame=None, scale=100):
 
         if w is None:
             w = self.w
@@ -184,21 +204,30 @@ class Rectangle:
         if type(w) == str:
             w = eval(w)
 
-        same_args_for_w = True
+        if frame is None:
+            self.frame = frame = 1
 
-        if self.right != right or self.left != left or self.top != top or self.bottom != bottom or self.fine != fine or self.Hticks != Hticks or self.Vticks!= Vticks:
-            same_args_for_w = False
+        self.same_args_for_w = True
 
-        if same_args_for_w:
-            self.transformed = self.matrix_generator(w=w, left=left, right=right, top=top, bottom=bottom, fine=fine,
-                                                     Hticks=Hticks, Vticks=Vticks)
+        if self.right != right or self.left != left or self.top != top or self.bottom != bottom or self.fine != fine or self.Hticks != Hticks or self.Vticks != Vticks:
+            self.same_args_for_w = False
+            self.right = right
+            self.left = left
+            self.top = top
+            self.bottom = bottom
+            self.fine = fine
+            self.Hticks = Hticks
+            self.Vticks = Vticks
+
+        if self.same_args_for_w:
+            self.transformed = self.anim(w=w, left=left, right=right, top=top, bottom=bottom, fine=fine, Hticks=Hticks,
+                                         Vticks=Vticks, frame=frame, scale=scale)
             self.over_write_traces(self.transformed)
 
         else:
-            self.transformed = self.matrix_generator(w=w, left=left, right=right, top=top, bottom=bottom, fine=fine,
-                                                     Hticks=Hticks, Vticks=Vticks)
+            self.transformed = self.anim(w=w, left=left, right=right, top=top, bottom=bottom, fine=fine, Hticks=Hticks,
+                                         Vticks=Vticks, frame=frame, scale=scale)
             self.add_new_data_to_traces(self.transformed)
-
 
     def show(self):
         return self.fig
