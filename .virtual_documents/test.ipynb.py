@@ -53,4 +53,46 @@ w = VBox([w4, w5, anim_slider, rect.show()])
 w
 
 
+side = widgets.FloatSlider(min=-10, max=0, value=-1, description='side')
+
+fine = widgets.IntSlider(min = 5, max = 50, value=10, description='Fine')
+
+Hticks = widgets.IntSlider(min = 2, max = 50, value=10, description='Hticks')
+Vticks = widgets.IntSlider(min = 2, max = 50, value=10, description='Vticks')
+
+
+function = widgets.Text( value = 'z**2' , description='w : ')
+
+frame = widgets.FloatSlider(min=0, max=100, value=100, step = 5, description='anim')
+
+play = widgets.Play(min= 0, max = 100, step = 5)
+# widgets.jslink((frame, 'value'), (play, 'value'))
+widgets.jslink((play, 'value'), (frame, 'value'))
+
+sq = Square()
+
+
+interactive_plot = widgets.interactive(sq.updateFunc,
+                                       w = function,
+                                       side = side,
+                                       fine = fine,
+                                      Hticks = Hticks,
+                                      Vticks = Vticks,
+                                      frame = frame
+                                      )
+
+
+# w1 = VBox([ left, right])
+# w2 = VBox([top,bottom])
+box1 = HBox([side, Hticks,Vticks])
+
+box2 = HBox([function, fine])
+
+anim_slider = HBox([play, frame])
+
+w = VBox([box1, box2, anim_slider, sq.show()])
+
+w
+
+
 

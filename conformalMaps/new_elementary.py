@@ -139,7 +139,7 @@ class Rectangle:
                 color = 'red'
             elif count == self.Hticks:
                 color = 'orange'
-            elif self.Hticks  < count < self.Vticks + self.Hticks - 1:
+            elif self.Hticks < count < self.Vticks + self.Hticks - 1:
                 color = 'green'
             elif count == self.Hticks + self.Vticks - 1:
                 color = 'magenta'
@@ -231,3 +231,17 @@ class Rectangle:
 
     def show(self):
         return self.fig
+
+
+class Square(Rectangle):
+    def __init__(self, side=1, fine=50, Hticks=10, Vticks=10, w=None):
+        super().__init__(left=-side, right=side, top=side, bottom=-side, fine=fine, Hticks=Hticks, Vticks=Vticks, w=w)
+
+    def updateFunc(self, w=None, side=None, fine=None, Hticks=None, Vticks=None, frame=None, scale=100):
+        if side is None:
+
+            super().updateFunc(left=side, right=side, top=side, bottom=side, fine=fine, Hticks=Hticks, Vticks=Vticks, w=w,
+                               frame=frame, scale=scale)
+        else:
+            super().updateFunc(left=-side, right=side, top=side, bottom=-side, fine=fine, Hticks=Hticks, Vticks=Vticks, w=w,
+                               frame=frame, scale=scale)
