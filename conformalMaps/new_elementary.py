@@ -171,12 +171,34 @@ class Rectangle:
         return self.matrix_generator(w=(w - z) * (frame / scale) + z, left=left, right=right, top=top, bottom=bottom,
                                      fine=fine, Hticks=Hticks, Vticks=Vticks)
 
+    def check_analytic(self, w = None):
+        if w is None:
+            f = self.w_sympy
+        elif type(w) == str:
+            f = self.w_sympy = self.evaluate(w)
+        else:
+            f = self.w_sympy = w
+
+        u = sym.re(f)
+        v = sym.im(f)
+
+        cond1 = sym.diff(u, x) - sym.diff(v, y)
+        cond2 = sym.diff(u, y) + sym.diff(v, x)
+
+        if sym.simplify(cond1) == 0 and sym.simplify(cond2) == 0:
+            print('The function is conformal, angles are preserved :)')
+        else:
+            print('The function is not conformal, angle are not preseverved ...')
+
+
     def evaluate(self, w):
         try:
+            self.w_sympy = w
             return eval(w)
         except:
             # tmp = exc
             print("CHECK FUNCTION w AGAIN, USING PREVIOUS ENTERED w")
+            self.w_sympy = self.w_sympy
             return self.w
 
     def updateFunc(self, w=None, left=None, right=None, top=None, bottom=None, fine=None, Hticks=None, Vticks=None,
@@ -481,7 +503,7 @@ class Circle(Donut):
 
 
 class Single_circle(Circle):
-    def __init__(self, w=None, r=1, fine=50, rticks=4, x0=0, y0=0):
+    def __init__(self, w=None, r=1, fine=50, rticks=0, x0=0, y0=0):
         super().__init__(w=w, r=r, fine=fine, cticks=1, rticks=rticks, x0=x0, y0=y0)
 
     def updateFunc(self, w=None, r=None, rticks=None, x0=None, y0=None, frame=None):
