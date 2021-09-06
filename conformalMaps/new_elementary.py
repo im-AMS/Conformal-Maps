@@ -31,6 +31,8 @@ class Rectangle:
         else:
             self.w = w
 
+        self.w_sympy = self.w
+
         self.init_plotly(self.left, self.right, self.top, self.bottom, self.fine, self.Hticks, self.Vticks, self.w)
 
     def init_plotly(self, left, right, top, bottom, fine, Hticks, Vticks, w):
@@ -298,6 +300,8 @@ class Donut(Rectangle):
             self.w = self.evaluate(w)
         else:
             self.w = w
+
+        self.w_sympy = self.w
 
         self.init_plotly(w=self.w, rin=self.rin, rout=self.rout, fine=self.fine, cticks=self.cticks, rticks=self.rticks,
                          x0=self.x0, y0=self.y0)
