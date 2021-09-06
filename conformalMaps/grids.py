@@ -179,7 +179,7 @@ class Rectangle:
         elif type(w) == str:
             f = self.w_sympy = self.evaluate(w)
         else:
-            f = self.w_sympy = w
+            f = self.w_sympy
 
         u = sym.re(f)
         v = sym.im(f)
@@ -195,8 +195,9 @@ class Rectangle:
 
     def evaluate(self, w):
         try:
-            self.w_sympy = w
-            return eval(w)
+            evaluated = eval(w)
+            self.w_sympy = evaluated
+            return evaluated
         except:
             # tmp = exc
             print("CHECK FUNCTION w AGAIN, USING PREVIOUS ENTERED w")
