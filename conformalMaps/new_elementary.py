@@ -175,6 +175,7 @@ class Rectangle:
         try:
             return eval(w)
         except:
+            # tmp = exc
             print("CHECK FUNCTION w AGAIN, USING PREVIOUS ENTERED w")
             return self.w
 
@@ -372,7 +373,6 @@ class Donut(Rectangle):
         return X, Y
 
     def plugin(self, w, X, Y):
-        # super().plugin(w=w, X=X, Y=Y)
         matrix = X.copy()  # same shape as X or Y
         for j in range(len(X)):
             for k in range(len(X[j])):
@@ -398,7 +398,6 @@ class Donut(Rectangle):
             traces.append(go.Scatter(x=arr.real,
                                      y=arr.imag,
                                      line_color=color,
-                                     # line_color="white",
                                      hoverinfo='none',
                                      line=dict(shape='spline'),
                                      mode='lines'))
@@ -468,11 +467,22 @@ class Donut(Rectangle):
 
 
 class Circle(Donut):
+
     def __init__(self, w=None, r=1, fine=50, cticks=5, rticks=10, x0=0, y0=0):
         super().__init__(w=w, rin=0, rout=r, fine=fine, cticks=cticks + 1, rticks=rticks, x0=x0, y0=y0)
 
     def updateFunc(self, w=None, r=None, fine=None, cticks=None, rticks=None, x0=None, y0=None, frame=None, scale=100):
         if cticks is None:
-            super().updateFunc(w=w, rin=0., rout=r, fine=fine, cticks=cticks, rticks=rticks, x0=x0, y0=y0)
+            super().updateFunc(w=w, rin=0., rout=r, fine=fine, cticks=cticks, rticks=rticks, x0=x0, y0=y0, frame=frame,
+                               scale=scale)
         else:
-            super().updateFunc(w=w, rin=0., rout=r, fine=fine, cticks=cticks + 1, rticks=rticks, x0=x0, y0=y0)
+            super().updateFunc(w=w, rin=0., rout=r, fine=fine, cticks=cticks + 1, rticks=rticks, x0=x0, y0=y0,
+                               frame=frame, scale=scale)
+
+
+class Single_circle(Circle):
+    def __init__(self, w=None, r=1, fine=50, rticks=4, x0=0, y0=0):
+        super().__init__(w=w, r=r, fine=fine, cticks=1, rticks=rticks, x0=x0, y0=y0)
+
+    def updateFunc(self, w=None, r=None, rticks=None, x0=None, y0=None, frame=None):
+        super().updateFunc(w=w, r=r, rticks=rticks, x0=x0, y0=y0, frame=frame, scale=100)

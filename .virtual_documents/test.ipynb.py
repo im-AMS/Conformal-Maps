@@ -9,7 +9,7 @@ bottom = widgets.FloatSlider(min=-10, max=0, value=-1, description='bottom')
 top = widgets.FloatSlider(min=0, max=10, value=1, description='top')
 right = widgets.FloatSlider(min=0, max=10, value=1, description='right')
 
-fine = widgets.IntSlider(min = 5, max = 50, value=10, description='Fine')
+fine = widgets.IntSlider(min = 20, max = 100, value=50, description='Fine')
 
 Hticks = widgets.IntSlider(min = 2, max = 50, value=10, description='Hticks')
 Vticks = widgets.IntSlider(min = 2, max = 50, value=10, description='Vticks')
@@ -53,9 +53,11 @@ w = VBox([w4, w5, anim_slider, rect.show()])
 w
 
 
-side = widgets.FloatSlider(min=-10, max=0, value=-1, description='side')
+sq = Square()
 
-fine = widgets.IntSlider(min = 5, max = 50, value=10, description='Fine')
+side = widgets.FloatSlider(min=0.01, max=10, value=1, description='side')
+
+fine = widgets.IntSlider(min = 20, max = 100, value=50, description='Fine')
 
 Hticks = widgets.IntSlider(min = 2, max = 50, value=10, description='Hticks')
 Vticks = widgets.IntSlider(min = 2, max = 50, value=10, description='Vticks')
@@ -66,10 +68,7 @@ function = widgets.Text( value = 'z**2' , description='w : ')
 frame = widgets.FloatSlider(min=0, max=100, value=100, step = 5, description='anim')
 
 play = widgets.Play(min= 0, max = 100, step = 5)
-# widgets.jslink((frame, 'value'), (play, 'value'))
 widgets.jslink((play, 'value'), (frame, 'value'))
-
-sq = Square()
 
 
 interactive_plot = widgets.interactive(sq.updateFunc,
@@ -80,7 +79,6 @@ interactive_plot = widgets.interactive(sq.updateFunc,
                                       Vticks = Vticks,
                                       frame = frame
                                       )
-
 
 # w1 = VBox([ left, right])
 # w2 = VBox([top,bottom])
@@ -93,6 +91,141 @@ anim_slider = HBox([play, frame])
 w = VBox([box1, box2, anim_slider, sq.show()])
 
 w
+
+
+donut = Donut()
+
+rin = widgets.FloatSlider(min=0, max=10, value=1, description='Rin')
+rout = widgets.FloatSlider(min=1, max=20, value=3, description='Rout')
+
+x0 = widgets.FloatSlider(min=-10, max=10, value=0, description='x0')
+y0 = widgets.FloatSlider(min=-10, max=10, value=0, description='y0')
+
+cticks = widgets.IntSlider(min = 2, max = 50, value=4, description='cticks')
+rticks = widgets.IntSlider(min = 2, max = 50, value=4, description='rticks')
+
+fine = widgets.IntSlider(min = 20, max = 100, value=50, description='Fine')
+
+function = widgets.Text( value = 'z**2' , description='w : ')
+
+frame = widgets.FloatSlider(min=0, max=100, value=100, step = 2, description='anim')
+
+play = widgets.Play(min= 0, max = 100, step = 5)
+widgets.jslink((play, 'value'), (frame, 'value'))
+
+interactive_plot = widgets.interactive(donut.updateFunc,
+                                       rin = rin,
+                                       rout = rout,
+                                       x0 = x0,
+                                       y0 = y0,
+                                       fine = fine,
+                                       cticks = cticks,
+                                       rticks = rticks,
+                                       w = function,
+                                       frame = frame)
+
+radius = VBox([rin, rout])
+offset = VBox([x0, y0])
+ticks = VBox([cticks, rticks])
+group = HBox([radius, offset,ticks])
+animation = HBox([play, frame])
+
+w1 = VBox([group, HBox([fine, function]), animation, donut.show()])
+
+from notebook.services.config import ConfigManager
+cm = ConfigManager()
+cm.update("notebook", {"skip-traceback": {
+    "animation_duration": 50,
+    "use_toolbar_button": True,
+}})
+
+display(w1,interactive_plot.children[-1])
+# display(HBox([interactive_plot, donut.show()]))
+# interactive_plot
+
+
+circle = Circle()
+
+r = widgets.FloatSlider(min=0.1, max=10, value=1, description='R')
+
+
+x0 = widgets.FloatSlider(min=-10, max=10, value=0, description='x0')
+y0 = widgets.FloatSlider(min=-10, max=10, value=0, description='y0')
+
+cticks = widgets.IntSlider(min = 2, max = 50, value=4, description='cticks')
+rticks = widgets.IntSlider(min = 0, max = 50, value=4, description='rticks')
+
+fine = widgets.IntSlider(min = 20, max = 100, value=50, description='Fine')
+
+function = widgets.Text( value = 'z**2' , description='w : ')
+
+frame = widgets.FloatSlider(min=0, max=100, value=100, step = 2, description='anim')
+
+play = widgets.Play(min= 0, max = 100, step = 2)
+widgets.jslink((play, 'value'), (frame, 'value'))
+
+interactive_plot = widgets.interactive(circle.updateFunc,
+                                       r = r,
+                                       x0 = x0,
+                                       y0 = y0,
+                                       fine = fine,
+                                       cticks = cticks,
+                                       rticks = rticks,
+                                       w = function,
+                                       frame = frame)
+
+radius = VBox([r, fine])
+offset = VBox([x0, y0])
+ticks = VBox([cticks, rticks])
+group = HBox([radius, offset,ticks])
+animation = HBox([play, frame])
+
+w1 = VBox([group, function, animation, circle.show()])
+
+w1
+# display(interactive_plot,circle.show())
+
+
+single = Single_circle(rticks=0)
+
+r = widgets.FloatSlider(min=0.1, max=10, value=1, description='R')
+
+
+x0 = widgets.FloatSlider(min=-10, max=10, value=0, description='x0')
+y0 = widgets.FloatSlider(min=-10, max=10, value=0, description='y0')
+
+rticks = widgets.IntSlider(min = 0, max = 50, value=0, description='rticks')
+
+fine = widgets.IntSlider(min = 20, max = 100, value=50, description='Fine')
+
+function = widgets.Text( value = 'z**2' , description='w : ')
+
+frame = widgets.FloatSlider(min=0, max=100, value=100, step = 2, description='anim')
+
+play = widgets.Play(min= 0, max = 100, step = 2)
+widgets.jslink((play, 'value'), (frame, 'value'))
+
+interactive_plot = widgets.interactive(single.updateFunc,
+                                       r = r,
+                                       x0 = x0,
+                                       y0 = y0,
+                                       fine = fine,
+                                       rticks = rticks,
+                                       w = function,
+                                       frame = frame)
+
+radius = VBox([r, fine])
+offset = VBox([x0, y0])
+# ticks = VBox([cticks, rticks])
+group = HBox([radius, offset,rticks])
+animation = HBox([play, frame])
+
+w1 = VBox([group, function, animation, single.show()])
+
+w1
+
+
+
 
 
 
