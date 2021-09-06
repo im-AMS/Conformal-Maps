@@ -1,3 +1,8 @@
+get_ipython().getoutput("pip install -r requirements.txt")
+get_ipython().getoutput("jupyter labextension install @jupyter-widgets/jupyterlab-manager")
+get_ipython().getoutput("jupyter nbextension enable --py widgetsnbextension")
+
+
 from conformalMaps.grids import *
 from conformalMaps.mappings import RectangleToEccentricAnnulus, RectangleToEllipticAnnulus, ConcentricAnnulusToEccentricAnnulus
 from ipywidgets import widgets
