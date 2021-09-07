@@ -4,14 +4,6 @@ conformalMaps package
 Submodules
 ----------
 
-conformalMaps.auxiliary module
-------------------------------
-
-.. automodule:: conformalMaps.auxiliary
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 conformalMaps.elementaryGeometry module
 ---------------------------------------
 
