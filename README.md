@@ -1,6 +1,9 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/im-AMS/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
 
 **Note** : It is advisable to download and run the code on your local computer for better performance compared to binder.
+
+#TLDR
+> Run the example.ipynb
 # conformalMaps
 
 The Python package ```conformalMaps``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
