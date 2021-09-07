@@ -190,7 +190,7 @@ class Rectangle:
         if sym.simplify(cond1) == 0 and sym.simplify(cond2) == 0:
             print('The function is conformal, angles are preserved :)')
         else:
-            print('The function is not conformal, angle are not preseverved ...')
+            print('The function is not conformal, angles are not preserved ...')
 
 
     def evaluate(self, w):

@@ -186,8 +186,8 @@ class ConcentricAnnulusToEccentricAnnulus:
           self.R1 = R1
           self.R2 = R2
           self.epsilon = epsilon
-          self.innerRadius = 1 
-          self.outerRadius = self.newRadii()[0]
+          self.rin = 1 
+          self.rout = self.newRadii()[0]
           self.moebiusConstant = self.newRadii()[1]
 
     def newRadii(self):
