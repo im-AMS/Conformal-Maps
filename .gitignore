@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 docs/build/html/searchindex.js
+.DS_Store
+.idea
