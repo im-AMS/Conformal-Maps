@@ -171,7 +171,7 @@ class ConcentricAnnulusToEccentricAnnulus:
     
     """
     def __init__(self, R1, R2, epsilon):
-          """
+        """
         
         Parameters
         ----------
@@ -183,12 +183,12 @@ class ConcentricAnnulusToEccentricAnnulus:
         None.
         """
 
-          self.R1 = R1
-          self.R2 = R2
-          self.epsilon = epsilon
-          self.rin = 1 
-          self.rout = self.newRadii()[0]
-          self.moebiusConstant = self.newRadii()[1]
+        self.R1 = R1
+        self.R2 = R2
+        self.epsilon = epsilon
+        self.rin = 1
+        self.rout = self.newRadii()[0]
+        self.moebiusConstant = self.newRadii()[1]
 
     def newRadii(self):
 
