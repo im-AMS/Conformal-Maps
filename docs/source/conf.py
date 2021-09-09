@@ -26,8 +26,8 @@ sys.path.insert(0, os.path.abspath('{0}'.format('.')))
 # -- Project information -----------------------------------------------------
 
 project = 'Conformal-Maps'
-copyright = '2021, Aditha and Zolabar'
-author = 'Aditha and Zolabar'
+copyright = '2021, Aditha and Zoufiné'
+author = 'Aditha and Zoufiné'
 
 # The full version, including alpha/beta/rc tags
 release = '1'
