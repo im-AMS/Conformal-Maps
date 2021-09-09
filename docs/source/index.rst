@@ -15,7 +15,8 @@ Application examples can be found on `Conformal Mappings with SymPy <https://git
 
    conformalMaps
 
-
+.. image:: GUI_cfmp.PNG
+    :width: 800
 
 
 Indices and tables
