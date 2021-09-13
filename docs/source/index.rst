@@ -28,3 +28,13 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+References
+==========
+
+[BC09]Brown J.W., Churchill R.V., `Complex variables and applications, Eighth edition, McGraw-Hill Book Company, 2009 <https://www.mheducation.com/highered/product/complex-variables-applications-brown-churchill/M9780073383170.html>`_
+
+[LG21] Lauer-Baré Z. and Gaertig E., `onformal Mappings with SymPy: Towards Python-driven Analytical Modeling in Physics*. Lauer-Baré, Z. & Gaertig, E. In Agarwal, M., Calloway, C., Niederhut, D., & Shupe, D., editors, Proceedings of the 20th Python in Science Conference, pages 85 - 93, 2021 <https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html>`_
+
+[PHW33] Piercy N.A.V., Hooper M.S., Winny H.F., `LIII. Viscous flow through pipes with cores, The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 1933 <https://www.tandfonline.com/doi/abs/10.1080/14786443309462212>`_
