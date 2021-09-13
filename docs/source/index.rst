@@ -20,6 +20,7 @@ The following figure illustrates the GUI for the deformation of a rectangular ge
 .. toctree::
 
    conformalMaps
+   gallery
 
 
 Indices and tables
