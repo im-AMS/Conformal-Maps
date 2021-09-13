@@ -5,6 +5,11 @@ Gallery
 Static
 ------
 
+.. math::
+   :label: concentricU
+
+   w(z)=\tan(\frac{z}{2})
+
 .. image:: Figures/tanz_2.png
     :width: 800
     
