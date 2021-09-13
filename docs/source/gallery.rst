@@ -1,5 +1,9 @@
+=======
+Gallery
+=======
+
 Static
-======
+------
 
 .. image:: Figures/tanz_2.png
     :width: 800
@@ -11,7 +15,7 @@ Static
     :width: 800
 
 Animated
-========
+--------
 
 
 .. image:: Figures/moebius.gif
