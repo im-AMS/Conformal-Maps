@@ -6,6 +6,7 @@ This gallery shows static and animated figures, created with the help of **confo
 
 Static
 ------
+Transformation of squares. 
 
 .. math::
 
@@ -16,17 +17,21 @@ Static
     
 .. math::
 
+   w(z)=z^3 
+ 
+.. image:: Figures/z^3.png
+    :width: 800    
+ 
+Transformation of circle into airfoil. 
+ 
+.. math::
+
    w(z)=z+\frac{1}{z}
     
 .. image:: Figures/Joukowsky-transform.png
     :width: 800
-    
-.. math::
 
-   w(z)=z^3 
- 
-.. image:: Figures/z^3.png
-    :width: 800
+
 
 Animated
 --------
