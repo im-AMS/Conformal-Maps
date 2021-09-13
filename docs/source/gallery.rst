@@ -2,12 +2,14 @@
 Gallery
 =======
 
+This gallery shows static and animated figures, created with the help of **conformalMaps**.
+
 Static
 ------
 
 .. math::
 
-   w(z)=\tan(\frac{z}{2})
+   w(z)=\tan\left(\frac{z}{2}\right)
 
 .. image:: Figures/tanz_2.png
     :width: 800
