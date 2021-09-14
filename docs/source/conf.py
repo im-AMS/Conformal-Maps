@@ -68,7 +68,7 @@ html_theme_options = {
     #'logo_only': True,
     'navigation_depth': 5,
 }
-html_logo = 'Figures/z_inv_2.PNG'
+html_logo = 'Figures/z_inv_3.PNG'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
