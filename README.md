@@ -128,3 +128,8 @@ In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [L
 
 [PHW33] [Piercy N.A.V., Hooper M.S., Winny H.F., LIII. Viscous flow through pipes with cores, The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 1933](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212)
 
+# ToDos
+
+- Error outputs if incomplete/wrong function entered, and also disappears if corrected in Jupyter.
+- Standalone pip package with just output graph.
+- Improve Documentation.
