@@ -12,7 +12,7 @@ The aim is to create a full package of scientific Python with release, documenta
 - Application examples can be found on `Conformal Mappings with SymPy <https://github.com/zolabar/ConformalMappingSympy>`_  
 - **Back** to `Conformal-Maps github repository <https://github.com/im-AMS/Conformal-Maps>`_ 
 
-The following figure illustrates the GUI for the deformation of a rectangular geometry.
+The following figure illustrates the GUI for the interactive deformation of a rectangular geometry.
 
 .. image:: GUI_cfmp.PNG
     :width: 800
