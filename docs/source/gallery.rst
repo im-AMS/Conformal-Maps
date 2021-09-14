@@ -1,6 +1,11 @@
 Gallery
 =======
 
+.. automodule:: Gallery
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 This gallery shows static and animated figures, created with the help of **conformalMaps**.
 
 Static
