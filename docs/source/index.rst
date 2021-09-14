@@ -10,7 +10,7 @@ The package **conformalMaps** is about conformal mappings and their applications
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The package adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies.
 
 - Application examples can be found on `Conformal Mappings with SymPy <https://github.com/zolabar/ConformalMappingSympy>`_  
-- Back to `Conformal-Maps github repository <https://github.com/im-AMS/Conformal-Maps>`_ 
+- **Back** to `Conformal-Maps github repository <https://github.com/im-AMS/Conformal-Maps>`_ 
 
 The following figure illustrates the GUI for the deformation of a rectangular geometry.
 
