@@ -2,3 +2,4 @@ sympy
 plotly
 numpy
 jupyter
+voila

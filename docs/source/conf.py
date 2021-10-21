@@ -26,8 +26,8 @@ sys.path.insert(0, os.path.abspath('{0}'.format('.')))
 # -- Project information -----------------------------------------------------
 
 project = 'Conformal-Maps'
-copyright = '2021, Aditha and Zolabar'
-author = 'Aditha and Zolabar'
+copyright = '2021, Aditha and Zoufiné Lauer-Baré'
+author = 'Aditha and Zoufiné Lauer-Baré'
 
 # The full version, including alpha/beta/rc tags
 release = '1'
@@ -59,8 +59,16 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
+#html_theme = 'classic'
+#html_theme = 'nature'
 
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    #'logo_only': True,
+    'navigation_depth': 5,
+}
+html_logo = 'Figures/z_inv_3.PNG'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
