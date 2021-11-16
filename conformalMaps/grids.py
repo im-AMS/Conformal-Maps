@@ -174,7 +174,7 @@ class Rectangle:
         return self.matrix_generator(w=(w - z) * (frame / scale) + z, left=left, right=right, top=top, bottom=bottom,
                                      fine=fine, Hticks=Hticks, Vticks=Vticks)
 
-    def check_analytic(self, w = None):
+    def check_analytic(self, w = None, silent = False):
         if w is None:
             f = self.w_sympy
         elif type(w) == str:
@@ -192,12 +192,18 @@ class Rectangle:
         cond1 = sym.diff(u, x) - sym.diff(v, y)
         cond2 = sym.diff(u, y) + sym.diff(v, x)
 
-    
+        
         
         if sym.simplify(cond1) == 0 and sym.simplify(cond2) == 0:
-            print('The function is conformal, angles are preserved :)')
+            if silent is False:
+                print('The function is conformal, angles are preserved :)')
+            out = True
         else:
-            print('The function is not conformal, angles are not preserved ...')
+            if silent is False:
+                print('The function is not conformal, angles are not preserved ...')
+            out = False
+            
+        return out    
 
 
     def evaluate(self, w):
