@@ -2,6 +2,7 @@ import numpy as np
 import plotly.graph_objs as go
 import sympy as sym
 from sympy import *
+from collections import defaultdict
 
 x, y = sym.symbols('x y', real=True)
 I = i = sym.I
@@ -181,12 +182,18 @@ class Rectangle:
         else:
             f = self.w_sympy
 
+        reps = defaultdict(lambda:sym.Dummy(real=True))    
+        
+        f = f.replace(lambda x: x.is_Float, lambda x: reps[x])
+            
         u = sym.re(f)
         v = sym.im(f)
 
         cond1 = sym.diff(u, x) - sym.diff(v, y)
         cond2 = sym.diff(u, y) + sym.diff(v, x)
 
+    
+        
         if sym.simplify(cond1) == 0 and sym.simplify(cond2) == 0:
             print('The function is conformal, angles are preserved :)')
         else:
