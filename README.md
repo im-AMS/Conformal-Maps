@@ -18,6 +18,7 @@ This code offers the possibility to visualize the geometrical change of certain 
 
 A code documentation can be found on the [project readthedocs page](https://conformal-maps.readthedocs.io/en/latest/index.html).
 
+The **conformalMaps** project is listed in the [Voila Gallery](https://voila-gallery.org/) of standalone dashboard web Apps.
 
 ## Run the code
 
