@@ -111,7 +111,7 @@ w=z^3 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 w=tan (z/2) (origin is the square [-3.14, 3.14] x [-3.14, 3.14])
 ![tanz](Figures/tanz_2.png)
 
-w=2xy + i(y sin x - x sin y) (origin is the square [-5, 5] x [-5, 5])
+w=2*x*y + i*(y*sin(x) - x*sin(y)) (origin is the square [-5, 5] x [-5, 5])
 ![MyFav](Figures/MyFav.png)
 
 w=(z+1)/(i-z) (origin is an annulus with radii 3 and 7)
