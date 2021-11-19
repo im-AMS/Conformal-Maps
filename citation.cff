@@ -4,8 +4,10 @@ authors:
   - family-names: Lauer-Bare
     given-names: Zoufine
     orcid: https://orcid.org/0000-0002-7083-6909
+authors:
+    given-names: Aditya
 title: ConformalMaps -  Code for interactive conformal mapping with python and jupyter notebook
 version: v1.0.0
 journal: GitHub
 date-released: 2021-11-16
-url: https://github.com/zolabar/Conformal-Maps
+url: https://github.com/im-AMS/Conformal-Maps
