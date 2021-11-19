@@ -1,4 +1,8 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/im-AMS/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
+
+[Click here: Web App rendered by Voila](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/master?urlpath=voila%2Frender%2Fexample_voila.ipynb)
+
+
 
 **Note** : It is advisable to download and run the code on your local computer for better performance compared to binder.
 
@@ -14,6 +18,7 @@ This code offers the possibility to visualize the geometrical change of certain 
 
 A code documentation can be found on the [project readthedocs page](https://conformal-maps.readthedocs.io/en/latest/index.html).
 
+The **conformalMaps** project is listed in the [Voila Gallery](https://voila-gallery.org/) of standalone dashboard web Apps.
 
 ## Run the code
 
@@ -106,7 +111,7 @@ w=z^3 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 w=tan (z/2) (origin is the square [-3.14, 3.14] x [-3.14, 3.14])
 ![tanz](Figures/tanz_2.png)
 
-w=2xy + i(y sin x - x sin y) (origin is the square [-5, 5] x [-5, 5])
+w=2*x*y + i*(y*sin(x) - x*sin(y)) (origin is the square [-5, 5] x [-5, 5])
 ![MyFav](Figures/MyFav.png)
 
 w=(z+1)/(i-z) (origin is an annulus with radii 3 and 7)
