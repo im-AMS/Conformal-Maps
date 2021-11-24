@@ -1,5 +1,5 @@
-# conformalMaps
-<img src="Figures/logo.PNG" width="100" height="100" alt="Girl in a jacket" />
+
+<img src="Figures/logo_3.PNG"  height="200" alt="Girl in a jacket" />
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)[![DOI](https://zenodo.org/badge/398743694.svg)](https://zenodo.org/badge/latestdoi/398743694)
 
