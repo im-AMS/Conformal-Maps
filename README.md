@@ -109,7 +109,7 @@ w=z^3 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![z^3](Figures/z^3.png)
 
 w=tan (z/2) (origin is the square [-3.14, 3.14] x [-3.14, 3.14])
-![tanz](Figures/tanz_2.png)
+![tanz](Figures/tanz_2.svg)
 
 w=2*x*y + i*(y*sin(x) - x*sin(y)) (origin is the square [-5, 5] x [-5, 5])
 ![MyFav](Figures/MyFav.png)
