@@ -13,7 +13,7 @@
 > Run the example.ipynb
 
 ## Description
-The Python package ***conformalMaps*** is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
+The Python package **conformalMaps** is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
 
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The package adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies and anyone who wants to visualize how complex variable mappings change plane geometries.
 
