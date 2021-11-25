@@ -96,6 +96,10 @@ Open the `example.ipynb`
 
 And **RUN!!!**
 
+## GUI
+
+![gui](Figures/GUI_dark.PNG)
+
 ## Examples
 
 Here are a few preview images, that show how squares get transformed by complex variable mappings. 
