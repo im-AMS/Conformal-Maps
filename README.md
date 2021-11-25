@@ -6,7 +6,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/master?urlpath=voila%2Frender%2Fexample_voila.ipynb)  [![example badge](Figures/succeeded.svg)](https://conformal-maps.herokuapp.com/)(Click these badgets for web App rendered by Voila with **Binder** or **Heroku** respectively)
 
 
-**Note** : It is advisable to download and run the code on your local computer for better performance compared to binder.
+**Note** : It is advisable to download and run the code on your local computer for better performance compared to Binder or Heroku. 
 
 # TLDR
 > Run the example.ipynb
