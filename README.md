@@ -23,6 +23,18 @@ A code documentation can be found on the [project readthedocs page](https://conf
 
 The **conformalMaps** project is listed in the [Voila Gallery](https://voila-gallery.org/) of standalone dashboard web Apps.
 
+**Supported Grids to transform**
+
+* Rectangle
+
+* Square
+
+* Donut
+
+* Circle
+
+* Single circle
+
 ## Run the code
 
 ### Method 1
