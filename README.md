@@ -1,7 +1,7 @@
 
 <img src="Figures/logo_3.PNG"  height="200" alt="Girl in a jacket" />
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest) [![DOI](https://zenodo.org/badge/398743694.svg)](https://zenodo.org/badge/latestdoi/398743694) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/master?urlpath=voila%2Frender%2Fexample_voila.ipynb)(web App - Voila/**Binder**) [![example badge](Figures/succeeded.svg)](https://conformal-maps.herokuapp.com/)(web App - Voila/ **Heroku**)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest) [![DOI](https://zenodo.org/badge/398743694.svg)](https://zenodo.org/badge/latestdoi/398743694) Voila Web App: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/master?urlpath=voila%2Frender%2Fexample_voila.ipynb)(**Binder**) [![example badge](Figures/succeeded.svg)](https://conformal-maps.herokuapp.com/)( **Heroku**)
 
 
 **Note** : It is advisable to download and run the code on your local computer for better performance compared to Binder or Heroku. 
