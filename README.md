@@ -1,16 +1,16 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest)
 
-[Click here: Web App rendered by Voila](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/master?urlpath=voila%2Frender%2Fexample_voila.ipynb)
+<img src="Figures/logo_3.PNG"  height="200" alt="Girl in a jacket" />
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/HEAD) [![Documentation Status](https://readthedocs.org/projects/conformal-maps/badge/?version=latest)](https://conformal-maps.readthedocs.io/en/latest/?badge=latest) [![DOI](https://zenodo.org/badge/398743694.svg)](https://zenodo.org/badge/latestdoi/398743694) Voila Web App: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zolabar/Conformal-Maps/master?urlpath=voila%2Frender%2Fexample_voila.ipynb)(**Binder**) 
 
 
-
-**Note** : It is advisable to download and run the code on your local computer for better performance compared to binder.
+**Note** : It is advisable to download and run the code on your local computer for better performance compared to Binder or Heroku (this repo contains directives for deployment with Heroku).
 
 # TLDR
 > Run the example.ipynb
-# conformalMaps
 
-The Python package ```conformalMaps``` is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
+## Description
+The Python package **conformalMaps** is about conformal mappings and their applications. It was made to be as interactive as possible with sliders from IPyWidgets. 
 
 The aim is to create a full package of scientific Python with release, documentation, webpage etc... The package adresses students of applied sciences, lecturers, researchers and engineers and scientists at companies and anyone who wants to visualize how complex variable mappings change plane geometries.
 
@@ -19,6 +19,18 @@ This code offers the possibility to visualize the geometrical change of certain 
 A code documentation can be found on the [project readthedocs page](https://conformal-maps.readthedocs.io/en/latest/index.html).
 
 The **conformalMaps** project is listed in the [Voila Gallery](https://voila-gallery.org/) of standalone dashboard web Apps.
+
+**Supported Grids to transform**
+
+* Rectangle
+
+* Square
+
+* Donut
+
+* Circle
+
+* Single circle
 
 ## Run the code
 
@@ -93,6 +105,10 @@ Open the `example.ipynb`
 
 And **RUN!!!**
 
+## GUI
+
+![gui](Figures/GUI_dark.PNG)
+
 ## Examples
 
 Here are a few preview images, that show how squares get transformed by complex variable mappings. 
@@ -109,7 +125,7 @@ w=z^3 (origin is the square [-1.5, 1.5] x [-1.5, 1.5])
 ![z^3](Figures/z^3.png)
 
 w=tan (z/2) (origin is the square [-3.14, 3.14] x [-3.14, 3.14])
-![tanz](Figures/tanz_2.png)
+![tanz](Figures/tanz_2.svg)
 
 w=2*x*y + i*(y*sin(x) - x*sin(y)) (origin is the square [-5, 5] x [-5, 5])
 ![MyFav](Figures/MyFav.png)
@@ -129,7 +145,7 @@ In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [L
 
 [BC09] [Brown J.W., Churchill R.V., Complex variables and applications, Eighth edition, McGraw-Hill Book Company; 2009](https://www.mheducation.com/highered/product/complex-variables-applications-brown-churchill/M9780073383170.html)
 
-[LG21] Lauer-Baré Z. and Gaertig E., [*Conformal Mappings with SymPy: Towards Python-driven Analytical Modeling in Physics*. Lauer-Baré, Z. & Gaertig, E. In Agarwal, M., Calloway, C., Niederhut, D., & Shupe, D., editors, Proceedings of the 20th Python in Science Conference, pages 85 - 93, 2021](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html)
+[LG21] [Lauer-Baré Z. and Gaertig E., Conformal Mappings with SymPy: Towards Python-driven Analytical Modeling in Physics. Lauer-Baré, Z. & Gaertig, E. In Agarwal, M., Calloway, C., Niederhut, D., & Shupe, D., editors, Proceedings of the 20th Python in Science Conference, pages 85 - 93, 2021](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html)
 
 [PHW33] [Piercy N.A.V., Hooper M.S., Winny H.F., LIII. Viscous flow through pipes with cores, The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 1933](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212)
 
