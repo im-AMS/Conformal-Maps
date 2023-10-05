@@ -137,7 +137,7 @@ w=z+1/z (circle boundary, center at (-0.08, 0.08), radius = 1.08)
 ![Joukowsky transform](Figures/Joukowsky-transform.png)
 ## Applications
 
-In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. Further, ```ConcentricAnnulusToEccentricAnnulus``` illustrates relations between concentric and eccentric annuli, which are used in [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html), too. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).
+In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) the conformal mapping between an eccentric annulus and a rectangle is used to solve a viscous flow problem analytically. The mapping is ilustrated by the following animation. The class ```RectangleToEccentricAnnulus``` from the module ```mappings``` helps to create a rectangle, that methods from ```RectangleToEccentricAnnulus``` map to a desired eccentric annulus. Further, ```ConcentricAnnulusToEccentricAnnulus``` illustrates relations between concentric and eccentric annuli, which are used in [LG21](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html) and [LGKS23](https://publications.rwth-aachen.de/record/957191), too. See also the [public github repository](https://github.com/zolabar/ConformalMappingSympy).
 
 ![lnz](Figures/mapping_arctan_colored_boundary.gif)
 
@@ -146,6 +146,8 @@ In [PHW33](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212) and [L
 [BC09] [Brown J.W., Churchill R.V., Complex variables and applications, Eighth edition, McGraw-Hill Book Company; 2009](https://www.mheducation.com/highered/product/complex-variables-applications-brown-churchill/M9780073383170.html)
 
 [LG21] [Lauer-Baré Z. and Gaertig E., Conformal Mappings with SymPy: Towards Python-driven Analytical Modeling in Physics. Lauer-Baré, Z. & Gaertig, E. In Agarwal, M., Calloway, C., Niederhut, D., & Shupe, D., editors, Proceedings of the 20th Python in Science Conference, pages 85 - 93, 2021](https://conference.scipy.org/proceedings/scipy2021/lauer_bare_gaertig.html)
+
+[LGKS23] [Lauer-Baré Z., Gaertig E., Krebs J., Sleziona C. Analytical formulae in fluid power, quo vadis in times of CFD and I4.0? 13th International Fluid Power Conference, p. 866-879, 2023](https://publications.rwth-aachen.de/record/957191)
 
 [PHW33] [Piercy N.A.V., Hooper M.S., Winny H.F., LIII. Viscous flow through pipes with cores, The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science, 1933](https://www.tandfonline.com/doi/abs/10.1080/14786443309462212)
 
