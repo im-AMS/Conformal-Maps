@@ -1,5 +1,6 @@
-sympy
-plotly
 numpy
-jupyter
+sympy
+ipywidgets>=8
+plotly==5.24.1
+jupyterlab<5
 voila
